@@ -1,0 +1,36 @@
+
+<form class="form-style">
+<h2>Add a new employee</h2>
+
+  <div class="col">
+
+    <div class="row-sm col-style">
+  <mat-label class="label-style">First Name</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput name="firstNameInput" placeholder="Enter you first name">
+  </mat-form-field>
+</div>
+
+<div class="row-sm col-style">
+  <mat-label class="label-style">Surname</mat-label>
+  <mat-form-field appearance="fill">
+  <input matInput name="surnameInput" placeholder="Enter you surname">
+</mat-form-field>
+</div>
+
+<div class="row-sm col-style">
+  <mat-label class="label-style">Age</mat-label>
+  <mat-form-field appearance="fill">
+  <mat-select placeholder="Choose the age">
+    <mat-option *ngFor="let age of ages" [value]="age.value">
+      {{age.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+
+<div class="row-sm col-style">
+  <button class="btn-style"type="submit" mat-raised-button>Submit</button></div>
+
+</div>
+</form>
