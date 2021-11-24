@@ -7,22 +7,22 @@
     <div class="row-sm col-style">
   <mat-label class="label-style">First Name</mat-label>
   <mat-form-field appearance="fill">
-    <input matInput name="firstNameInput" placeholder="Enter you first name">
+    <input matInput name="firstNameInput" placeholder="Enter you first name" #firstName>
   </mat-form-field>
 </div>
 
 <div class="row-sm col-style">
   <mat-label class="label-style">Surname</mat-label>
   <mat-form-field appearance="fill">
-  <input matInput name="surnameInput" placeholder="Enter you surname">
+  <input matInput name="surnameInput" placeholder="Enter you surname" #surname>
 </mat-form-field>
 </div>
 
 <div class="row-sm col-style">
   <mat-label class="label-style">Age</mat-label>
   <mat-form-field appearance="fill">
-  <mat-select placeholder="Choose the age">
-    <mat-option *ngFor="let age of ages" [value]="age.value">
+  <mat-select placeholder="Choose the age" #age>
+    <mat-option *ngFor="let age of ages" [value]="age.viewValue" name="ageInput" >
       {{age.viewValue}}
     </mat-option>
   </mat-select>
@@ -30,7 +30,7 @@
 </div>
 
 <div class="row-sm col-style">
-  <button class="btn-style"type="submit" mat-raised-button>Submit</button></div>
+  <button class="btn-style"type="submit" mat-raised-button (click)="addEmployee(firstName.value,surname.value, age.value)">Submit</button></div>
 
 </div>
 </form>

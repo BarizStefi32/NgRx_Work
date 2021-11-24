@@ -1,0 +1,9 @@
+<h1>List of employees</h1>
+
+<div *ngFor="let employee of (employees$ | async)">
+
+    <span >First Name</span> {{employee.firstName}}
+    <span >Surname</span> {{employee.surname}}
+    <span >Age</span> {{employee.age}}
+
+  </div>
