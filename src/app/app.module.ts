@@ -9,11 +9,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
-import { employeeReducer } from './reducers/employee.reducer';
+import { employeeReducer, EmployeeKey } from './+state/employee.reducer';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { EmployeeEffects } from './effects/employee.effects';
-
+import { EmployeeEffects } from './+state/employee.effects';
+import * as fromEmployee from './+state/employee.reducer'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -29,9 +32,10 @@ import { EmployeeEffects } from './effects/employee.effects';
     MatSelectModule,
     MatButtonModule,
     MatInputModule,
-   //StoreModule.forFeature('employee reducer', employeeReducer),
-    StoreModule.forRoot({NgRx:employeeReducer}),
-    EffectsModule.forRoot([EmployeeEffects])
+    EffectsModule.forRoot([EmployeeEffects]),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forFeature('employee', fromEmployee.reducer),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
 
   ],
   providers: [],

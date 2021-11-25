@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Age } from '../interfaces/age';
-import { EmployeeState } from '../reducers/employee.reducer';
+import { EmployeeState } from '../+state/employee.reducer';
 import { Store } from '@ngrx/store';
-import * as EmployeeActions from '../actions/employee.actions';
+import * as EmployeeActions from '../+state/employee.actions';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

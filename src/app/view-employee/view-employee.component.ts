@@ -1,10 +1,10 @@
-import { selectEmployees } from './../selectors/employee.selector';
+import { selectEmployees } from '../+state/employee.selector';
 import { Employee } from './../interfaces/employee';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import {select, Store} from '@ngrx/store';
-import { EmployeeState } from '../reducers/employee.reducer';
-import * as EmployeeSelector from '../selectors/employee.selector';
+import { EmployeeState } from '../+state/employee.reducer';
+import * as EmployeeSelector from '../+state/employee.selector';
 
 @Component({
   selector: 'app-view-employee',
@@ -13,7 +13,7 @@ import * as EmployeeSelector from '../selectors/employee.selector';
 })
 export class ViewEmployeeComponent implements OnInit {
 
-  employees$ = this.store.pipe(select(EmployeeSelector.selectEmployees));
+  employees$ =this.store.pipe(select(EmployeeSelector.selectEmployees));
 
   constructor(private store: Store<EmployeeState>) {}
 

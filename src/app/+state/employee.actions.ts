@@ -1,5 +1,5 @@
-import { Employee } from './../interfaces/employee';
-import { employeeModel } from './../models/employeeModel';
+import { Employee } from '../interfaces/employee';
+import { employeeModel } from '../models/employeeModel';
 import {createAction,props} from '@ngrx/store';
 
 
