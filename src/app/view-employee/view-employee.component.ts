@@ -19,7 +19,7 @@ export class ViewEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.employees$.subscribe(data=> console.log(data));
+    //this.employees$.subscribe(data=> console.log(data));
   }
 
 }

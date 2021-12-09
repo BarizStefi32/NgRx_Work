@@ -16,12 +16,3 @@ export const selectEmployees = createSelector(
 
 );
 
-
-// const selectEmployees = (state: any) => state.hasOwnProperty('employees') ? state.employees: '';
-
-// export const selectedEmployees = createSelector(
-//   selectEmployees,
-//   (state: any) => {
-//     return state.hasOwnProperty('employees') ? state.employees : '';
-//   }
-// );

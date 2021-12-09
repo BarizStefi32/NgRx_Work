@@ -31,4 +31,3 @@ export const employeeReducer = createReducer(
 export function reducer(state:EmployeeState, action:Action){
   return employeeReducer(state,action);
 }
-
